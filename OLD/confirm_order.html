@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta username="apple-mobile-web-app-capable" content="yes" />
+        <meta name="description" content="Lo que quieras, cuando quieras.">
+        <meta content="authenticity_token" name="csrf-param" />
+        <meta name="google-site-verification" content="9vdzWUBLllNWOsvPnhvE5-uRqlw_KjfJi-s9ja2sTSI" />
+
+        <!--link type='text/css' href='../files/main_style7432.css?1394681344' rel='stylesheet' title='wsite-theme-css' /-->
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Kangou | Pidiendo un kangou</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,400italic,700" media="screen" rel="stylesheet" />
+        <link href="css/application-2d941dc2b4bcdeb171fe0c502f6dd0aa.css" media="screen" rel="stylesheet" />
+        <link href="css/application-2d941dc2b4bcdeb171fe0c502f6dd0aa.css" media="all" rel="stylesheet" />
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link href="favicon.ico" type="image/x-icon" rel="icon" />
+        <link href="/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+
+    </head>
+    <body>
+
+        <div class="row", style="margin-top: 60px;" ></div>
+        <div class="row"></div>
+        <div class="container">
+            <div class="row">
+                <form accept-charset="UTF-8" action="orders/" id="checkout_form_id" method="post">
+
+                    <header class="navbar nav-hurrier navbar-inverse navbar-fixed-top" role = "banner">
+                        <div class = "container">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-navbar-collapse" style="height:45px; ">
+                                    <span class="sr-only">Navegación</span>
+                                    <span class="icon-bar" style="background-image: none; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"></span>
+                                    <span class="icon-bar" style="background-image: none; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"></span>
+                                    <span class="icon-bar" style="background-image: none; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"></span>
+                                </button>
+
+                                <a href="#jump_to_cart" class="navbar-toggle toggle-custom visible-xs toggle-custom-link" style="height:45px;"> <span style="min-width: 76px; display:none" id="order_total_header2"><b><span class="glyphicon glyphicon-shopping-cart toggle-custom-link" id="order_total_header_total2"></span></b></span> </a>
+                                <a href="pages/index" ><img src="img/logoKANGOUrefresh2.png" style="height: 60px"></img></a>
+                            </div>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+
+                            <nav class="collapse navbar-collapse" role="navigation" id="bs-navbar-collapse" style="overflow:hidden;">
+                                <ul class="nav nav-options2 navbar-right ">
+                                    <li style="min-width: 76px; display:none" id="order_total_header">
+                                        <a href="#jump_to_cart"> <b><span class="glyphicon glyphicon-shopping-cart" id="order_total_header_total"></span></b> </a>
+                                    </li>
+
+                                    <li id="header_link_to_sign_up">
+                                        <a id="amenu" data-toggle="modal" href="javascript:void(0)" onclick="returnToIndex();">Inicio</a>
+                                    </li>
+                                    <!--li id="header_link_to_log_in"><a data-toggle="modal" href="pickUps/add" style="min-width: 76px">Pide un kangou</a></li-->
+
+                                    <li id="header_link_to_sign_up">
+                                        <a id="amenu" data-toggle="modal" href="#sign_up" >Signup</a>
+                                    </li>
+                                    <li id="header_link_to_log_in">
+                                        <a id="amenu" data-toggle="modal" href="#log_in" >Login</a>
+                                    </li>
+                                </ul>
+                            </nav>
+
+                        </div>
+                    </header>
+
+                    <ul class="nav nav-pills blue" style="text-align:center">
+                        <li id="progress_step1" class="disabled">
+                            <a onclick="clickChangeStep(1)">Paso 1: &iquest;A d&oacute;nde voy?</a>
+                        </li>
+                        <li id="progress_step2" class="disabled">
+                            <a onclick="clickChangeStep(2)">Paso 2: &iquest;Qu&eacute; te llevo o qu&eacute; te compro?</a>
+                        </li>
+                        <li id="progress_step3" class="disabled">
+                            <a onclick="clickChangeStep(3)">Paso 3: &iquest;D&oacute;nde te lo entrego?</a>
+                        </li>
+                        <li id="progress_step4" class="enabled">
+                            <a onclick="validate_dropoff_address(true)">Paso 4: Confirmar orden</a>
+                        </li>
+                    </ul>
+                    <div class="row">
+
+                        <div class="col-sm-5 col-md-5">
+
+                            <div class = "well" style="background-color: white; margin-top:0px; padding-left:36px; padding-right:36px;">
+                                <h3>¡Importante!</h3>
+                                <p align="justify">
+                                    Una vez que confirmes tu forma de pago, un Kangou se pondr&aacute; en contacto contigo. Aceptamos VISA, MasterCard y American Express.
+                                </p>
+                            </div >
+
+                            <div class = "well" style="background-color: white; margin-top:0px; padding-left:36px; padding-right:36px;">
+
+                                <h3 style="margin-bottom: 0px">Tu informaci&oacute;n de contacto</h3>
+                                <p>
+                                    (para actualizaciones de estado del env&iacute;o)
+                                </p>
+                                </h3>
+                                <p>
+                                    <strong>Nombre</strong>
+                                </p>
+                                <p>
+                                    <input id="name" name="data[Order][user_name]" data-conekta="card[name]" onkeypress="nameKeypress()" placeholder="(requerido)" required="required" style="margin:0px" type="text" value="" />
+                                    <div id="name_error" STYLE="color: red; font-weight: normal"></div>
+                                </p>
+                                <p>
+                                    <strong>E-mail</strong>
+                                </p>
+                                <p>
+                                    <input id="email" name="data[Order][user_email]" onkeypress="emailKeypress()" placeholder="(requerido)" required="required" style="margin:0px" type="email" value="" />
+                                    <div id="email_error" STYLE="color: red; font-weight: normal"></div>
+                                </p>
+                                <p>
+                                    <strong>WhatsApp</strong>
+                                </p>
+                                <p>
+                                    <input id="phone" name="data[Order][user_phone]" onkeypress="phoneKeypress()" placeholder="(requerido)" required="required" style="margin:0px" type="tel" value="" />
+                                    <div id="phone_error" STYLE="color: red; font-weight: normal"></div>
+                                </p>
+                                <p>
+                                    <strong>Twitter (Opcional)</strong>
+                                </p>
+                                <p>
+                                    <input id="twitter" name="data[Order][user_twitter]" placeholder="Te informaremos para mejorar la calidad del servicio." style="margin:0px" type="text" />
+                                </p>
+                                <br/>
+                            </div>
+
+                            <div class = "well" style="background-color: white; margin-top:0px; padding-left:36px; padding-right:36px; /* height: 750px; */">
+
+                                <h3 style="margin-bottom: 0px">Realizar pedido</h3>
+                                <p></p>
+
+                                <p>
+                                    <strong>C&oacute;digo de promoci&oacute;n</strong>
+                                </p>
+                                <p>
+                                    <input id="promo_code" name="data[Order][promo_code]" onkeypress="promocodeKeypress()" onchange="promocodeKeypress()" placeholder="(opcional)" style="margin:0px" value="" autocomplete="off"/>
+                                    <div id="promo_code_error" STYLE="color: red; font-weight: normal"></div>
+                                </p>
+
+                                <br/>
+                                <p align="justify">
+                                    Si pagas con tarjeta obtendrás un código de promoción para compartir en redes sociales y poder ganar entregas <b>GRATIS</b>.
+                                <p><p></p>
+
+                                <p align="justify">
+                                    <div id="price_a"></div>
+                                </p>
+                                <p></p>
+
+                                <div id="checkout_display">
+
+                                    <br/>
+                                    <div >
+                                        <p align="justify">
+                                            Transacción segura por medio de <img src="https://s3.amazonaws.com/conekta/static/v6/assets/images/logo.png" alt="conketa" style="width:20%;max-width:162px" />
+                                        </p>
+                                    </div>
+
+                                    <div id="cardForm">
+                                        <p>
+                                            <strong>Número de Tarjeta</strong>
+                                        </p>
+                                        <p>
+                                            <input type="text" size="20" data-conekta="card[number]" required/>
+                                            <div id="creditcard_error" STYLE="color: red; font-weight: normal"></div>
+                                        </p>
+
+                                        <p>
+                                            <strong>CVC</strong>
+                                        </p>
+                                        <p>
+                                            <input type="text" size="4"  data-conekta="card[cvc]" placeholder="(3 dígitos de la parte trasera de la tarjeta)" required/>
+                                            <div id="cvc_error" STYLE="color: red; font-weight: normal"></div>
+                                        </p>
+
+                                        <div class="col-sm-6 col-md-6">
+                                            <p>
+                                                <strong>Fecha de Expiración</strong>
+                                            </p>
+                                        </div>
+
+                                        <div class="col-sm-3 col-md-3">
+                                            <p>
+                                                <strong>(MM)</strong>
+                                            </p>
+                                            <p>
+                                                <input type="text" size="2" data-conekta="card[exp_month]" placeholder="(MM)"  required/>
+                                                <!--span>/</span-->
+                                            </p>
+                                        </div>
+
+                                        <div class="col-sm-3 col-md-3">
+                                            <p>
+                                                <strong>(AA)</strong>
+                                            </p>
+                                            <input type="text" size="2" width="60px" data-conekta="card[exp_year]" placeholder="(AA)" required/>
+                                            <div id="datexp_error" STYLE="color: red; font-weight: normal"></div>
+                                        </div>
+
+                                    </div>
+                                    <!-- End cardForm -->
+
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <img alt="VISA - Mastercard" title="" src="img/Visa-MasterCard-American-express.jpeg" height="50" border="0" />
+
+                                    <br/>
+                                    <br/>
+                                    <br/>
+
+                                    <table>
+                                        <tr>
+                                            <td>
+                                            <button id="newCardButton" style="background: transparent; border: none !important; padding-left: 80px; " >
+                                                <img src="img/confirmar.png" alt="Pagar con Tarjeta" style="width:85%" />
+                                            </button></td>
+                                        </tr>
+                                    </table>
+
+                                    <br/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--  ¿A dónde voy? y ¿A dónde te lo llevo? -->
+                        <div class="col-sm-7 col-md-7">
+                            <div class = "well" style="background-color: white; margin-top:0px; padding-left:36px; padding-right:36px;">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-6">
+                                        <h3>Aqu&iacute; voy</h3>
+                                        <div class="hidden-sm" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?zoom=16&amp;size=600x200&amp;visual_refresh=true&amp;maptype=roadmap&amp;sensor=false&amp;markers=color:green%7Clabel:A%7C1%Anáhuac, Miguel Hidalgo, 11320 Ciudad de México, D.F., México'); height: 200px; width: 100%; background-size: cover; background-position: center center; margin-bottom:10px"></div>
+                                        <div class="visible-sm" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?zoom=16&amp;size=600x200&amp;visual_refresh=true&amp;maptype=roadmap&amp;sensor=false&amp;markers=color:green%7Clabel:A%7C1%Anáhuac, Miguel Hidalgo, 11320 Ciudad de México, D.F., México'); height: 150px; width: 100%; background-size: cover; background-position: center center; margin-bottom:10px"></div>
+                                        <p>
+                                            Anáhuac, Miguel Hidalgo, 11320 Ciudad de México, D.F., México
+                                            <br/>
+                                        </p>
+                                        <!--p>  primera dirección<br/>Segunda Dirección<br/></p-->
+                                    </div>
+                                    <div class="col-sm-6 col-md-6">
+                                        <h3>Aqu&iacute; te entrego</h3>
+                                        <div class="hidden-sm" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?zoom=16&amp;size=600x200&amp;visual_refresh=true&amp;maptype=roadmap&amp;sensor=false&amp;markers=color:red%7Clabel:B%7C10%test '); height: 200px; width: 100%; background-size: cover; background-position: center center; margin-bottom:10px"></div>
+                                        <div class="visible-sm" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?zoom=16&amp;size=600x200&amp;visual_refresh=true&amp;maptype=roadmap&amp;sensor=false&amp;markers=color:red%7Clabel:B%7C10%test '); height: 150px; width: 100%; background-size: cover; background-position: center center; margin-bottom:10px"></div>
+                                        <p>
+                                            test
+                                            <br/>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div id="distance" ></div>
+                                <div id="price_b"></div>
+
+                                <h3>Lista de lo que te entrego:</h3>
+                                <p>
+                                    test
+                                    <br/>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </body>
+    <!--script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script-->
+    <script src="js/custom_order_application.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://conektaapi.s3.amazonaws.com/v0.3.1/js/conekta.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2Ye3JDI4R4nFun3NHdH3I_kOGoL9qfFk&amp;libraries=places&amp;sensor=true&language=es&region=MX"></script>
+
+    <script src="js/form_validation.js"></script>
+
+    <script src="js/signup_login.js"></script>
+    <script src="js/confirm_order_validation.js"></script>
+
+    <!-- Begin Google Analytics -->
+    <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-50367626-1', 'kangou.mx');
+ga('send', 'pageview');
+
+    </script>
+    <!-- End Google Analytics -->
+
+</html>

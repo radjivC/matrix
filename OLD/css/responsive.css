@@ -1,0 +1,394 @@
+/* 
+   ------------------------------------------------------
+					Responsive Styles
+   ------------------------------------------------------
+*/
+
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+	h1 { font-size: 32px; }
+	h2 { font-size: 26px; }
+	
+	.titlebar p {font-size: 15px; line-height: 25px; padding: 0 10%; }
+	
+	.btn-lg { font-size: 16px; padding: 12px 24px; }
+		
+	/*------------------------------------------*/
+	/*	 Top Banner
+	/*------------------------------------------*/
+
+	#tp_banner_description { margin: 103px 0 123px; padding-right: 0; }
+	#tp_banner_image { padding-right: 0;}
+	
+	/*------------------------------------------*/
+	/*	 Features
+	/*------------------------------------------*/
+	
+	#feature_1, #feature_4 { margin-top: 8px; } 
+	#feature_2, #feature_3, #feature_5, #feature_6 { margin-top: 14px; }
+	.feature-box-icon i { margin: 8px 0 ; }	
+	
+	#f_center_content img { margin-top: 8px;} 
+	
+	/*------------------------------------------*/
+	/*	  Screens
+	/*------------------------------------------*/ 
+	
+	.hover-details:hover .image_zoom {top: 42%;}
+
+	/*------------------------------------------*/
+	/*	 Team
+	/*------------------------------------------*/ 
+	
+	p.member-info {padding: 0 3%;}
+	
+	/*------------------------------------------*/
+	/*	 Video Banner
+	/*------------------------------------------*/ 
+	
+	#v_banner_content {margin: 0;}
+	#v_banner_content h1  {margin-bottom: 15px; }
+	#v_banner_content p {font-size: 14px; line-height: 24px; font-weight: 600; }
+	.btn-google-play, .btn-app-store { margin-top: 15px; }
+	
+	.video-block { padding-bottom: 66%; }
+	
+	/*------------------------------------------*/
+	/*	 Pricing
+	/*------------------------------------------*/
+	
+	.pricing-table .plan-title {font-size: 18px; }
+	.pricing-table .plan-price span {font-size: 24px; }
+	.plan-price small { font-size: 16px; }
+	.pricing-table ul.features li { font-size: 16px; }
+		
+	/*------------------------------------------*/
+	/*	 Testimonials
+	/*------------------------------------------*/
+	.testimonials {margin: 50px 5%; }
+	
+	/*------------------------------------------*/
+	/*	  FAQs Accordion
+	/*------------------------------------------*/
+
+	.accordion a { line-height: 20px;padding: 10px 25px 10px 40px;}	
+	.accordion li div { line-height: 20px;padding: 10px; }
+		
+}
+
+
+@media only screen and (max-width: 991px){
+		
+	/*------------------------------------------*/
+	/*	 Basic Styles
+	/*------------------------------------------*/
+	
+	h1 { font-size: 30px; }
+	h2 { font-size: 24px; }
+	
+	.titlebar p {font-size: 14px; line-height: 24px; padding: 0 5%; }
+		
+	.btn-lg { font-size: 15px; padding: 10px 20px; }
+	
+	/*------------------------------------------*/
+	/*	 Top Banner
+	/*------------------------------------------*/
+
+	#tp_banner_description { margin: 38px 0 58px; padding-right: 0;  width: 54%; }
+	#tp_banner_description h1 { line-height: 1.1; }	
+	#tp_banner_description p { font-size: 14px; line-height: 22px ;margin-bottom: 30px; }
+	
+	#tp_banner_image { width: 46%; padding-right: 0; padding-left: 0; }
+	
+	/*------------------------------------------*/
+	/*	 Features
+	/*------------------------------------------*/
+	
+	#feature_1, #feature_4 { margin-top: 0px; } 
+	#feature_2, #feature_3, #feature_5, #feature_6 { margin-top: 10px; }
+	.feature-box-icon i { margin: 5px 0 ;font-size: 28px; }	
+
+	.feature-box p { font-size: 13px; line-height: 18px; }
+	.feature-box h4 { font-size: 14px; }
+	
+	#f_center_content img { margin-top: 50px;} 
+	
+	/*------------------------------------------*/
+	/*	  Screens
+	/*------------------------------------------*/ 
+	
+	#screenshot_1, #screenshot_2, #screenshot_3, #screenshot_4,
+	#screenshot_5, #screenshot_6, #screenshot_7, #screenshot_8 { padding-right: 5px; padding-left: 5px;}
+	
+	.hover-details:hover .image_zoom {top: 42%;}
+	.hover-details:hover .img-cover h3 {bottom: 24%;}
+	
+	/*------------------------------------------*/
+	/*	  Team
+	/*------------------------------------------*/ 
+	
+	#team { padding-bottom: 50px; }
+	.team-img-meta h4 { font-size: 14px; }
+	#team-member-holder { padding: 0 5%; }
+	#team_1, #team_2, #team_3, #team_4 { padding-right: 40px; padding-left: 40px;}
+	.team-member { margin-bottom: 30px; } 
+	
+	/*------------------------------------------*/
+	/*	 Video Banner
+	/*------------------------------------------*/ 
+	
+	#v_banner_content {margin: 0;}
+	#v_banner_content h1  {margin-bottom: 15px; }
+	#v_banner_content p {font-size: 14px; line-height: 20px; font-weight: 600; }
+	.btn-google-play, .btn-app-store { margin-top: 15px; }
+	
+	.video-block { margin-top: 30px; padding-bottom: 80%; }
+	
+	/*------------------------------------------*/
+	/*	 Pricing
+	/*------------------------------------------*/
+	
+	#pricing { padding-bottom: 60px; }
+	#pricing-table-holder { padding: 0 5%;}	
+	#price_1, #price_2, #price_3, #price_4 { padding-right: 20px; padding-left: 20px;}
+	.pricing-table { margin-bottom: 40px; }
+	.pricing-table .plan-title {font-size: 18px; }
+	.pricing-table ul.features li { font-size: 15px; }
+		
+	/*------------------------------------------*/
+	/*	 Testimonials
+	/*------------------------------------------*/
+	.testimonials {margin: 50px 0; }
+	
+	/*------------------------------------------*/
+	/*	  FAQs Accordion
+	/*------------------------------------------*/
+
+	.accordion a { line-height: 20px; padding: 10px 10px 10px 40px;}	
+	.accordion li div { line-height: 20px;padding: 10px; }
+	
+	/*------------------------------------------*/
+	/*	  Newsletter
+	/*------------------------------------------*/ 
+	
+	#newsletter_title { text-align: center;}
+	#newsletter_title p { padding: 0 5%; }
+	#newsletter_form { padding-left: 60px; padding-right: 60px; }
+	
+}
+
+@media only screen and (max-width: 767px){
+
+	/*------------------------------------------*/
+	/*	 Basic Styles
+	/*------------------------------------------*/
+	
+	h1 { font-size: 30px; }
+	h2 { font-size: 24px; }
+	
+	#jprePercentage { font-size:  40px; }
+	
+	.titlebar p {font-size: 14px; line-height: 24px; padding: 0 5%; }
+		
+	.btn-lg { font-size: 15px; padding: 10px 20px; }
+
+	.navbar-brand { padding: 15px 15px 15px 30px;}
+	.navbar-nav > li > a { line-height: 40px; text-align: center;}
+	
+	/*------------------------------------------*/
+	/*	 Top Banner
+	/*------------------------------------------*/
+
+	#tp_banner_description { margin: 30px 0 15px; padding: 0 5%; width: 100%;  text-align: center; }
+	#tp_banner_description h1 {line-height: 1.2;}	
+	#tp_banner_description p {font-size: 14px; line-height: 22px ; margin-bottom: 30px;}
+	
+	#tp_banner_image { width: 100%; padding-right: 15px; padding-left: 15px;}
+	
+	/*------------------------------------------*/
+	/*	 Features
+	/*------------------------------------------*/
+	
+	#features { padding-bottom: 80px; }
+	#feature_1, #feature_4 { margin-top: 0; }
+	#feature_2, #feature_3, #feature_5, #feature_6 { margin-top: 10px; }
+	.feature-box-icon i { margin: 8px 0 ;font-size: 34px; }	
+	.feature-box p {font-size: 14px; line-height: 20px; }
+	.feature-box h4 {font-size: 16px;}
+		
+	#f_left_content, #f_right_content { text-align: center; padding: 0 20%;}
+	
+	#f_center_content { text-align: center; }
+	#f_center_content .img-responsive { display: inline-block; }
+	#f_center_content img { margin-top: 30px;}
+	
+	/*------------------------------------------*/
+	/*	  Screens
+	/*------------------------------------------*/ 
+	
+	#screenshots-holder1, #screenshots-holder2 { padding: 0 8%; }
+	#screenshot_1, #screenshot_2, #screenshot_3, #screenshot_4,
+	#screenshot_5, #screenshot_6, #screenshot_7, #screenshot_8 { padding-right: 16px; padding-left: 16px;}
+	
+	.hover-details:hover .image_zoom {top: 45%;}
+	.hover-details:hover .img-cover h3 {bottom: 28%;}
+	
+	/*------------------------------------------*/
+	/*	  Team
+	/*------------------------------------------*/ 
+	
+	.team-img-meta h4 { font-size: 18px; }
+	
+	/*------------------------------------------*/
+	/*	 Video Banner
+	/*------------------------------------------*/ 
+	
+	#video-banner {padding: 50px 0; }
+	#v_banner_content {margin: 0; padding: 0 4%; text-align: center; }
+	#v_banner_content h1  {margin-bottom: 15px; }
+	#v_banner_content p {font-size: 14px; line-height: 20px; font-weight: 600; }
+	.btn-google-play, .btn-app-store { margin-top: 15px; }
+	
+	#v_banner_video { padding: 0 4%; }
+	.video-block { margin-top: 30px; padding-bottom: 60%; }
+	
+	/*------------------------------------------*/
+	/*	 Testimonials
+	/*------------------------------------------*/
+	
+	.testimonials {margin: 50px 8%; }
+	.slides {margin: 0px 0 40px;}
+
+	.testimonials h4 { font-size: 16px; }
+	.testimonials p { font-size: 16px; }
+	
+	/*------------------------------------------*/
+	/*	  FAQs Accordion
+	/*------------------------------------------*/
+
+	#question_1,#question_2, #question_3, #question_4,
+	#question_5, #question_6, #question_7, #question_8 { padding: 0 6%; }
+	.accordion a { line-height: 26px; padding: 10px 40px;}	
+	.accordion li div { line-height: 20px; padding: 10px; }
+	
+	/*------------------------------------------*/
+	/*	  Contact
+	/*------------------------------------------*/ 
+	
+	#contact-form { padding: 0 8%;}	
+	#contact .btn-lg {font-size: 16px; padding: 12px 24px; }
+	
+	/*------------------------------------------*/
+	/*	  Newsletter
+	/*------------------------------------------*/ 
+	
+	#newsletter_title { text-align: center;}
+	#newsletter_title p { padding: 0 10%; }
+	#newsletter_form { padding-left: 80px; padding-right: 80px; }
+	
+	/*------------------------------------------*/
+	/*	 Footer
+	/*------------------------------------------*/ 
+	
+	#footer_copy, #footer_icons { text-align: center; }
+	#footer_copy .img-responsive { display: inline-block; }
+	
+	.footer-socials {display: inline-block; margin: 0 auto; float: none !important;}
+
+}
+
+
+@media (max-width: 480px) {
+	
+	#jprePercentage { font-size:  40px; }
+	
+	#stlChanger { display: none; }
+	
+	.titlebar p {font-size: 14px; line-height: 24px; padding: 0 15px; }
+	
+	.navbar-toggle { margin: 13px 20px 13px 0; }
+	.navbar-brand { padding: 15px 15px 15px 20px;}
+		
+	/*------------------------------------------*/
+	/*	 Top Banner
+	/*------------------------------------------*/
+
+	#tp_banner_description { margin: 20px 0 10px; padding: 0 15px;}
+	.tp_banner_btn a { margin-bottom: 10px; }
+		
+	/*------------------------------------------*/
+	/*	 Features
+	/*------------------------------------------*/
+	
+	#f_left_content, #f_right_content { text-align: center; padding: 0 8%;}
+	
+	
+	/*------------------------------------------*/
+	/*	 Screens
+	/*------------------------------------------*/ 
+	
+	#screenshots-holder1, #screenshots-holder2 { padding: 0 15px; }
+	#screenshot_1, #screenshot_2, #screenshot_3, #screenshot_4,
+	#screenshot_5, #screenshot_6, #screenshot_7, #screenshot_8 { width: 100%; float: none !important; padding-right: 15px; padding-left: 15px;}
+	
+	.hover-details:hover .image_zoom {top: 42%;}
+	.hover-details:hover .img-cover h3 {bottom: 30%;}
+	
+	/*------------------------------------------*/
+	/*	 Team
+	/*------------------------------------------*/ 
+	
+	#team-member-holder { padding: 0 15px;}
+	#team-member-holder .col-xs-6 { width: 100%; float: none !important; }	
+	.team-img-meta h4 { font-size: 18px; }
+	p.member-info { padding: 0; }
+	.team-member { margin-bottom: 30px; } 
+	
+		
+	/*------------------------------------------*/
+	/*	 Video Banner
+	/*------------------------------------------*/ 
+	
+	#v_banner_content, #v_banner_video { padding: 0 15px;}
+	.video-block { margin-top: 30px; padding-bottom: 70%; }
+	
+	/*------------------------------------------*/
+	/*	 Pricing
+	/*------------------------------------------*/
+
+	#pricing-table-holder { padding: 0 6%;}	
+	#pricing-table-holder .col-xs-6 { width: 100%; float: none !important; }	
+	.pricing-table { margin-bottom: 40px; }
+	.pricing-table .plan-title {font-size: 18px; }
+	.pricing-table ul.features li { font-size: 16px; }
+	
+	/*------------------------------------------*/
+	/*	 Testimonials
+	/*------------------------------------------*/
+	
+	.testimonials {margin: 50px 2%; }
+	
+	/*------------------------------------------*/
+	/*	  FAQs Accordion
+	/*------------------------------------------*/
+
+	#question_1,#question_2, #question_3, #question_4,
+	#question_5, #question_6, #question_7, #question_8 { padding: 0 2%; }
+	.accordion a { line-height: 20px; padding: 10px 10px 10px 40px; }	
+	
+	/*------------------------------------------*/
+	/*	  Newsletter
+	/*------------------------------------------*/ 
+	
+	#newsletter_title { text-align: center;}
+	#newsletter_title p { padding: 0 2%; }
+	#newsletter_form { padding-left: 20px; padding-right: 20px; }
+	.subscribe-input { width: 64%;}
+	.subscribe-submit { width: 36%; }
+}
+
+
+@media (max-width: 320px) {
+	
+}

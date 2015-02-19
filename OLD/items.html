@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta username="apple-mobile-web-app-capable" content="yes" />
+        <meta name="description" content="Lo que quieras, cuando quieras.">
+        <meta content="authenticity_token" name="csrf-param" />
+        <meta name="google-site-verification" content="9vdzWUBLllNWOsvPnhvE5-uRqlw_KjfJi-s9ja2sTSI" />
+
+        <!--link type='text/css' href='../files/main_style7432.css?1394681344' rel='stylesheet' title='wsite-theme-css' /-->
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Kangou | Pidiendo un kangou</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,400italic,700" media="screen" rel="stylesheet" />
+        <link href="css/application-2d941dc2b4bcdeb171fe0c502f6dd0aa.css" media="screen" rel="stylesheet" />
+        <link href="css/application-2d941dc2b4bcdeb171fe0c502f6dd0aa.css" media="all" rel="stylesheet" />
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link href="favicon.ico" type="image/x-icon" rel="icon" />
+        <link href="favicon.ico" type="image/x-icon" rel="shortcut icon" />
+
+    </head>
+    <body>
+
+        <div class="row", style="margin-top: 60px;" ></div>
+        <div class="row"></div>
+        <div class="container">
+            <div class="row">
+
+
+
+                <!-- Begin Header with Logo, Index, Signup and Login buttons -->
+                <header class="navbar nav-hurrier navbar-inverse navbar-fixed-top" role = "banner">
+                    <div class = "container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-navbar-collapse" style="height:45px; ">
+                                <span class="sr-only">Navegación</span>
+                                <span class="icon-bar" style="background-image: none; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"></span>
+                                <span class="icon-bar" style="background-image: none; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"></span>
+                                <span class="icon-bar" style="background-image: none; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"></span>
+                            </button>
+
+                            <a href="#jump_to_cart" class="navbar-toggle toggle-custom visible-xs toggle-custom-link" style="height:45px;"> <span style="min-width: 76px; display:none" id="order_total_header2"><b><span class="glyphicon glyphicon-shopping-cart toggle-custom-link" id="order_total_header_total2"></span></b></span> </a>
+                            <a href="pages/index" ><img src="img/logoKANGOUrefresh2.png" style="height: 60px"></img></a>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <nav class="collapse navbar-collapse" role="navigation" id="bs-navbar-collapse" style="overflow:hidden;">
+                            <ul class="nav nav-options2 navbar-right ">
+                                <li style="min-width: 76px; display:none" id="order_total_header">
+                                    <a href="#jump_to_cart"> <b><span class="glyphicon glyphicon-shopping-cart" id="order_total_header_total"></span></b> </a>
+                                </li>
+                                <li id="header_link_to_sign_up">
+                                    <a id="amenu" data-toggle="modal" href="#" >Inicio</a>
+                                </li>
+                                <!--li id="header_link_to_log_in"><a data-toggle="modal" href="pickUps/add" style="min-width: 76px">Pide un kangou</a></li-->
+                                <li id="header_link_to_sign_up">
+                                    <a id="amenu" data-toggle="modal" href="#sign_up" >Signup</a>
+                                </li>
+                                <li id="header_link_to_log_in">
+                                    <a id="amenu" data-toggle="modal" href="#log_in" >Login</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </header>
+                
+                
+
+                <!-- Container with Steps to place an Order -->
+                <div class="container hidden-xs">
+                    <ul class="nav nav-pills blue" style="text-align:center">
+                        <li id="progress_step1" class="disabled">
+                            <a onclick="clickChangeStep(1)">Paso 1: &iquest;D&oacute;nde recoger?</a>
+                        </li>
+                        <li id="progress_step2" class="enabled">
+                            <a onclick="clickChangeStep(2)">Paso 2: &iquest;Qu&eacute; te llevo o qu&eacute; te compro?</a>
+                        </li>
+                        <li id="progress_step3" class="disabled">
+                            <a onclick="clickChangeStep(3)">Paso 3: &iquest;D&oacute;nde entregar?</a>
+                        </li>
+                        <li id="progress_step4" class="disabled">
+                            <a onclick="validate_dropoff_address(true)">Paso 4: Confirmar orden</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+                <!-- Container for Maps and Forms to place an Order -->
+                <div id="map_container">
+                    <!-- Step 2: Listing Items -->
+                    <div id ="step_2" style='display:none; vertical-align: top;'>
+                        <div class = "well" style="background-color: white; margin-top:0px; padding:0px;">
+                            <form accept-charset="UTF-8" action="list_items/add/123" class="edit_order" id="new_order" method="post">
+                                <div id="get_items" style="padding:36px;">
+                                    <input id = "delivery_type" name="order[delivery_type]" value = "Other" type="hidden">
+                                    <p>
+                                        Podemos llevar cualquier tipo de producto excepto bebidas (frappes, smoothies, etc.) y sopas.
+                                    </p>
+                                    <p>
+                                        <strong> Ingresa tu pedido, te pedimos seas lo m&aacute;s descriptivo posible para saber que tipo de Kangou podr&aacute; completar tu env&iacute;o de la manera m&aacute;s eficiente.</strong>
+                                    </p>
+                                    <textarea id="order_item_list" name="data[ListItem][items]" placeholder="Ej. 1 ramo de la semana, una tarta de, una hamburguesa, etc." rows="4" style="margin: 0px; width: 100%;"></textarea>
+                                    <div id="order_item_list_error" STYLE="color: red; font-weight: bold; height: 20px; line-height: 18px"></div>
+                                    <!--p>*Ten en cuenta que vamos a hacer el pedido a tu nombre.</p-->
+                                    <p style="margin-top:20px;">
+                                        <input name="data[ListItem][on_behalf]" type="hidden" value="0" />
+                                        <input checked="checked" id="order_courier_pay_on_behalf_of_user" name="data[ListItem][on_behalf]" style="vertical-align:top; width:auto!important;" type="checkbox" value="1" />
+                                        Quiero que la compra sea a mi nombre.
+                                    </p>
+                                    <p>
+                                        *Si deseas que Kangou compre alg&uacute;n producto se aplicará un Fee del 5% de la compra.
+                                    </p>
+                                    <div style="text-align:right">
+                                        <button class="btn btn-hurrier btn-blue" type="button" id="order_next_button" onclick="new_order_clicked()">
+                                            Completar entrega&nbsp&nbsp&#12297;
+                                        </button>
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div style="height:135px"></div>
+                </div>
+            </div>
+
+            <div style="height: 20px"></div>
+
+        </div>
+        </div>
+        </div>
+
+        <script src="js/custom_order_application.js"></script>
+        <script src="js/order_validation.js"></script>
+        <script src="js/signup_login.js"></script>
+        <script>
+			function new_order_clicked() {
+				document.getElementById("order_next_button").disabled = true;
+				var order_item_list = document.getElementById('order_item_list').value;
+				if (order_item_list == "") {
+					order_item_list_error = "Debes escribir que va a llevar el kangou."
+					$('#order_item_list_error').html(order_item_list_error);
+					document.getElementById("order_next_button").disabled = false;
+					$('#item_list').focus();
+				} else {
+					$("#new_order").submit();
+				}
+			}
+
+
+			$(document).ready(function() {
+				$('#order_courier_pay_on_behalf_of_user').val(true);
+				//chrome runs this on page load
+				window.addEventListener("popstate", function(e) {
+					setStep(getQueryVariable("step"), true);
+				});
+				updateCompletedSteps(1)
+				enable_link('#progress_step1')
+				enable_link('#progress_step2')
+				disable_link('#progress_step3')
+				disable_link('#progress_step4')
+				setStep(2, true);
+			});
+        </script>
+
+        <!-- Begin Google Analytics -->
+        <script>
+			(function(i, s, o, g, r, a, m) {
+				i['GoogleAnalyticsObject'] = r;
+				i[r] = i[r] ||
+				function() {
+					(i[r].q = i[r].q || []).push(arguments)
+				}, i[r].l = 1 * new Date();
+				a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+				a.async = 1;
+				a.src = g;
+				m.parentNode.insertBefore(a, m)
+			})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+			ga('create', 'UA-50367626-1', 'kangou.mx');
+			ga('send', 'pageview');
+
+        </script>
+        <!-- End Google Analytics -->
+    </body>
+</html>

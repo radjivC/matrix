@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta username="apple-mobile-web-app-capable" content="yes" />
+        <meta name="description" content="Lo que quieras, cuando quieras.">
+        <meta content="authenticity_token" name="csrf-param" />
+        <meta name="google-site-verification" content="9vdzWUBLllNWOsvPnhvE5-uRqlw_KjfJi-s9ja2sTSI" />
+
+        <!--link type='text/css' href='../files/main_style7432.css?1394681344' rel='stylesheet' title='wsite-theme-css' /-->
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Kangou | Pidiendo un kangou</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,400italic,700" media="screen" rel="stylesheet" />
+        <link href="css/application-2d941dc2b4bcdeb171fe0c502f6dd0aa.css" media="screen" rel="stylesheet" />
+        <link href="css/application-2d941dc2b4bcdeb171fe0c502f6dd0aa.css" media="all" rel="stylesheet" />
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link href="/favicon.ico" type="image/x-icon" rel="icon" />
+        <link href="/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+
+    </head>
+    <body>
+        <div class="row" style="margin-top: 60px;" ></div>
+        <div class="row"></div>
+        <div class="container">
+            <div class="row">
+                <header class="navbar nav-hurrier navbar-inverse navbar-fixed-top" role = "banner">
+                    <div class = "container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-navbar-collapse" style="height:45px; ">
+                                <span class="sr-only">Navegación</span>
+                                <span class="icon-bar" style="background-image: none; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"></span>
+                                <span class="icon-bar" style="background-image: none; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"></span>
+                                <span class="icon-bar" style="background-image: none; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"></span>
+                            </button>
+
+                            <a href="#jump_to_cart" class="navbar-toggle toggle-custom visible-xs toggle-custom-link" style="height:45px;"> <span style="min-width: 76px; display:none" id="order_total_header2"><b><span class="glyphicon glyphicon-shopping-cart toggle-custom-link" id="order_total_header_total2"></span></b></span> </a>
+                            <a href="#" ><img src="img/logoKANGOUrefresh2.png" style="height: 60px"></img></a>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+
+                        <nav class="collapse navbar-collapse" role="navigation" id="bs-navbar-collapse" style="overflow:hidden;">
+                            <ul class="nav nav-options2 navbar-right ">
+                                <li style="min-width: 76px; display:none" id="order_total_header">
+                                    <a href="#jump_to_cart"> <b><span class="glyphicon glyphicon-shopping-cart" id="order_total_header_total"></span></b> </a>
+                                </li>
+
+                                <li id="header_link_to_sign_up">
+                                    <a id="amenu" data-toggle="modal" href="#">Inicio</a>
+                                </li>
+                                <!--li id="header_link_to_log_in"><a data-toggle="modal" href="pickUps/add" style="min-width: 76px">Pide un kangou</a></li-->
+
+                                <li id="header_link_to_sign_up">
+                                    <a id="amenu" data-toggle="modal" href="#sign_up" >Signup</a>
+                                </li>
+                                <li id="header_link_to_log_in">
+                                    <a id="amenu" data-toggle="modal" href="#log_in" >Login</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </header>
+
+                <div class="container hidden-xs">
+                    <ul class="nav nav-pills blue" style="text-align:center">
+                        <li id="progress_step1" class="disabled">
+                            <a onclick="clickChangeStep(1)">Paso 1: &iquest;D&oacute;nde recoger?</a>
+                        </li>
+                        <li id="progress_step2" class="disabled">
+                            <a onclick="clickChangeStep(2)">Paso 2: &iquest;Qu&eacute; te llevo o qu&eacute; te compro?</a>
+                        </li>
+                        <li id="progress_step3" class="enabled">
+                            <a onclick="clickChangeStep(3)">Paso 3: &iquest;D&oacute;nde entregar?</a>
+                        </li>
+                        <li id="progress_step4" class="disabled">
+                            <a onclick="validate_dropoff_address(true)">Paso 4: Confirmar orden</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="map_container">
+                    <!-- Step 3: Drop-off -->
+                    <div id="step_3" style="display:inline-block; vertical-align: top; width: 359px; height: 540px; line-height:20px; webkit-border-radius: 0px; moz-border-radius: 0px; border-radius: 0px;" class="jumbotron jumbotron-ovr alpha70">
+                        <form accept-charset="UTF-8" action="drop_offs/add/2147/1986" class="new_dropoff" id="new_dropoff_address" method="post">
+                            <div style="margin:0;padding:0;display:inline">
+                                <input name="utf8" type="hidden" value="&#x2713;" />
+                            </div>
+
+                            <input hidden="hidden" id="dropoff_gmaps_address"                   name="data[DropOff][gmaps_address]" type="hidden" />
+                            <input hidden="hidden" id="dropoff_gmaps_geometry_lat"              name="data[DropOff][gmaps_geometry_lat]" type="hidden" />
+                            <input hidden="hidden" id="dropoff_gmaps_geometry_lng"              name="data[DropOff][gmaps_geometry_lng]" type="hidden" />
+                            <input hidden="hidden" id="dropoff_gmaps_address_title"             name="data[DropOff][gmaps_address_title]" type="hidden" />
+                            <input hidden="hidden" id="dropoff_gmaps_address_street_address"    name="data[DropOff][gmaps_address_street_address]" type="hidden" />
+                            <input hidden="hidden" id="dropoff_gmaps_address_city"              name="data[DropOff][gmaps_address_city]" type="hidden" />
+                            <input hidden="hidden" id="dropoff_gmaps_address_province"          name="data[DropOff][gmaps_address_province]" type="hidden" />
+                            <input hidden="hidden" id="dropoff_gmaps_address_country"           name="data[DropOff][gmaps_address_country]" type="hidden" />
+                            <input hidden="hidden" id="dropoff_gmaps_address_postal_code"       name="data[DropOff][gmaps_address_postal_code]" type="hidden" />
+                            <input hidden="hidden" id="dropoff_zone_id"                         name="data[DropOff][zone_id]" type="hidden" />
+
+                            <p>
+                                <b>Paso 3: &iquest;D&oacute;nde entregar?</b>
+                            </p>
+                            <table>
+                                <tr  style="vertical-align: top;">
+                                    Calle y n&uacute;mero o establecimiento:
+                                </tr>
+                                <tr>
+                                    <!-- onchange="validate_dropoff_address(false)"-->
+                                    <input id="dropoff_address_line_one" name="data[DropOff][address]" placeholder="(calle y número exterior)" required="required" style="margin-bottom: 0px" type="text" />
+                                    <div id="dropoff_address_error" STYLE="color: red; font-weight: bold; height: 20px; line-height: 18px"></div>
+                                </tr>
+                                <tr style="vertical-align: top;">
+                                    Colonia:
+                                </tr>
+                                <tr>
+                                    <input id="dropoff_address_line_two" placeholder="(opcional)" style="margin-bottom: 0px" type="text" />
+                                    <div id="dropoff_address_error" STYLE="color: red; font-weight: bold; height: 20px; line-height: 18px"></div>
+                                </tr>
+                                <tr style="vertical-align: top;">
+                                    Referencias:
+                                </tr>
+                                <tr>
+                                    <textarea id="dropoff_special_instructions" name="data[DropOff][special_instruction]" placeholder="(ej. frente a escuela, etc.)" rows="2"></textarea>
+                                </tr>
+                                <tr>
+                                    <br />
+                                </tr>
+                                <tr>
+                                    <br />
+                                </tr>
+                                <tr style="vertical-align: top;">
+                                    Nombre del establecimiento:
+                                </tr>
+                                <tr>
+                                    <input id="dropoff_company_name" name="data[DropOff][company_name]" placeholder="(opcional)" style="margin-bottom: 20px" type="text" />
+                                </tr>
+                                <tr style="vertical-align: top;">
+                                    Nombre de contacto:
+                                </tr>
+                                <tr>
+                                    <input id="dropoff_contact_name" name="data[DropOff][contact_name]" placeholder="(opcional)" style="margin-bottom: 20px" type="text" />
+                                </tr>
+
+                                <tr style="vertical-align: top;">
+                                    <td> Distancia:
+                                    <br>
+                                    <input id="distance" style="margin-bottom: 20px" type="text" disabled />
+                                    </td>
+                                    <td><div style="width: 40px;"></div></td>
+                                    <td> Precio Estimado:
+                                    <br>
+                                    <input id="estimated_price" style="margin-bottom: 20px" type="text" disabled />
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <div style="text-align:right">
+                                <button class="btn btn-hurrier btn-blue" type="button" id="dropoff_address_next_button" onclick="validate_dropoff_address(true)">
+                                    Continuar &nbsp&nbsp&#12297;
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Map -->
+                    <div id="map_canvas" class="hidden-mobile" style="display:inline-block; position: absolute; width: 0px; height: 540px;"></div>
+
+                </div>
+
+                <div style="height: 20px"></div>
+            </div>
+    </body>
+    </div>
+    </body>
+
+    <div id="fb-root"></div>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2Ye3JDI4R4nFun3NHdH3I_kOGoL9qfFk&amp;libraries=places&amp;sensor=true&language=es&region=MX"></script>
+    <script src="js/form_validation.js"></script>
+    <script src="js/custom_order_application.js"></script>
+    <script src="js/signup_login.js"></script>
+
+    <script src="js/dropoff_validation.js"></script>
+
+    </body>
+
+    <!-- Begin Google Analytics -->
+    <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-50367626-1', 'kangou.mx');
+ga('send', 'pageview');
+
+    </script>
+    <!-- End Google Analytics -->
+
+</html>

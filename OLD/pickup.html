@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta username="apple-mobile-web-app-capable" content="yes" />
+        <meta name="description" content="Lo que quieras, cuando quieras.">
+        <meta content="authenticity_token" name="csrf-param" />
+        <meta name="google-site-verification" content="9vdzWUBLllNWOsvPnhvE5-uRqlw_KjfJi-s9ja2sTSI" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Pide un Kangou</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,400italic,700" media="screen" rel="stylesheet" />
+        <link href="css/application-2d941dc2b4bcdeb171fe0c502f6dd0aa.css" media="screen" rel="stylesheet" />
+        <link href="css/application-2d941dc2b4bcdeb171fe0c502f6dd0aa.css" media="all" rel="stylesheet" />
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="row" style="margin-top: 60px;"></div>
+        <div class="container">
+            <div class="row">
+
+
+
+                <!-- Begin Header with Logo, Index, Signup and Login buttons -->
+                <header class="navbar nav-hurrier navbar-inverse navbar-fixed-top" role="banner">
+                    <div class = "container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-navbar-collapse" style="height:45px; ">
+                                <span class="sr-only">Navegación</span>
+                                <span class="icon-bar" style="background-image: none; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"></span>
+                                <span class="icon-bar" style="background-image: none; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"></span>
+                                <span class="icon-bar" style="background-image: none; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;"></span>
+                            </button>
+
+                            <a href="#jump_to_cart" class="navbar-toggle toggle-custom visible-xs toggle-custom-link" style="height:45px;"> <span style="min-width: 76px; display:none" id="order_total_header2"><b><span class="glyphicon glyphicon-shopping-cart toggle-custom-link" id="order_total_header_total2"></span></b></span> </a>
+                            <a href="pages/index" ><img src="img/logoKANGOUrefresh2.png" style="height: 60px"></img></a>
+                        </div>
+                        <nav class="collapse navbar-collapse" role="navigation" id="bs-navbar-collapse" style="overflow:hidden;">
+                            <ul class="nav nav-options2 navbar-right ">
+                                <li style="min-width: 76px; display:none" id="order_total_header">
+                                    <a href="#jump_to_cart"> <b><span class="glyphicon glyphicon-shopping-cart" id="order_total_header_total"></span></b> </a>
+                                </li>
+                                <li id="header_link_to_sign_up">
+                                    <a id="amenu" data-toggle="modal" href="#" >Inicio</a>
+                                </li>
+                                <li id="header_link_to_sign_up">
+                                    <a id="amenu" data-toggle="modal" href="#sign_up" >Signup</a>
+                                </li>
+                                <li id="header_link_to_log_in">
+                                    <a id="amenu" data-toggle="modal" href="#log_in" >Login</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </header>
+
+
+
+                <!-- Container with Steps to place an Order -->
+                <div class="container hidden-xs">
+                    <ul class="nav nav-pills blue" style="text-align:center">
+                        <li id="progress_step1" class="enabled">
+                            <a onclick="clickChangeStep(1)">Paso 1: &iquest;D&oacute;nde recoger?</a>
+                        </li>
+                        <li id="progress_step2" class="disabled">
+                            <a onclick="clickChangeStep(2)">Paso 2: &iquest;Qu&eacute; te llevo o qu&eacute; te compro?</a>
+                        </li>
+                        <li id="progress_step3" class="disabled">
+                            <a onclick="clickChangeStep(3)">Paso 3: &iquest;D&oacute;nde entregar?</a>
+                        </li>
+                        <li id="progress_step4" class="disabled">
+                            <a onclick="validate_dropoff_address(true)">Paso 4: Confirmar orden</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+                <!-- Container for Maps and Forms to place an Order -->
+                <div id="map_container">
+                    <!--  Step 1: Pick-up (Form and Map) -->
+                    <div id="step_1" style="display:inline-block; vertical-align: top; width: 359px; height: 510px;; line-height:20px; webkit-border-radius: 0px; moz-border-radius: 0px; border-radius: 0px;" class="jumbotron jumbotron-ovr alpha70">
+                        <form accept-charset="UTF-8" action="pickUps/add" class="new_pickup"  id="new_pickup_address" method="post">
+                            <div style="margin:0;padding:0;display:inline">
+                                <input name="utf8" type="hidden" value="&#x2713;" />
+                            </div>
+                            <input hidden="hidden" id="pickup_gmaps_address"                  name="data[PickUp][gmaps_address]" type="hidden" />
+                            <input hidden="hidden" id="pickup_gmaps_geometry_lat"             name="data[PickUp][gmaps_geometry_lat]" type="hidden" />
+                            <input hidden="hidden" id="pickup_gmaps_geometry_lng"             name="data[PickUp][gmaps_geometry_lng]" type="hidden" />
+                            <input hidden="hidden" id="pickup_gmaps_address_title"            name="data[PickUp][gmaps_address_title]" type="hidden" />
+                            <input hidden="hidden" id="pickup_gmaps_address_street_address"   name="data[PickUp][gmaps_address_street_address]" type="hidden" />
+                            <input hidden="hidden" id="pickup_gmaps_address_city"             name="data[PickUp][gmaps_address_city]" type="hidden" />
+                            <input hidden="hidden" id="pickup_gmaps_address_province"         name="data[PickUp][gmaps_address_province]" type="hidden" />
+                            <input hidden="hidden" id="pickup_gmaps_address_country"          name="data[PickUp][gmaps_address_country]" type="hidden" />
+                            <input hidden="hidden" id="pickup_gmaps_address_postal_code"      name="data[PickUp][gmaps_address_postal_code]" type="hidden" />
+                            <input hidden="hidden" id="pickup_zone_id"                        name="data[PickUp][zone_id]" type="hidden" />
+                            <p>
+                                <b>Paso 1: &iquest;D&oacute;nde recoger?</b>
+                            </p>
+                            <br/>
+                            <table>
+                                <tr style="vertical-align: top;">
+                                    Calle y n&uacute;mero o establecimiento:<!--font color="red">*</font-->
+                                </tr>
+                                <tr>
+                                    <!-- onchange="validate_pickup_address(false)" -->
+                                    <input id="pickup_address_line_one" name="data[PickUp][address]"  placeholder="(ej. Goldsmith 40, Fisher's, Pizza, etc.)" required="required" style="margin-bottom: 0px" type="text" />
+                                    <div id="pickup_address_error" STYLE="color: red; font-weight: bold; height: 20px; line-height: 18px"></div>
+                                </tr>
+
+                                <tr style="vertical-align: top;">
+                                    Colonia y Delegaci&oacute;n:
+                                </tr>
+                                <tr>
+                                    <input id="pickup_address_line_two" placeholder="(opcional)" style="margin-bottom: 0px" type="text" />
+                                    <div id="pickup_address_error" STYLE="color: red; font-weight: bold; height: 20px; line-height: 18px"></div>
+                                </tr>
+                                <tr style="vertical-align: top;">
+                                    Referencias:
+                                </tr>
+                                <tr>
+                                    <textarea id="pickup_special_instructions" name="data[PickUp][special_instruction]" placeholder="(frente a escuela, piso 4, no. interior, etc.)" rows="3"></textarea>
+                                </tr>
+                                <tr>
+                                    <br />
+                                </tr>
+                                <tr>
+                                    <br />
+                                </tr>
+                                <tr style="vertical-align: top;">
+                                    Nombre del establecimiento:
+                                </tr>
+                                <tr>
+                                    <input id="pickup_company_name" name="data[PickUp][company_name]" placeholder="(opcional)" style="margin-bottom: 20px" type="text" />
+                                </tr>
+                                <tr style="vertical-align: top;">
+                                    Nombre de contacto:
+                                </tr>
+                                <tr>
+                                    <input id="pickup_contact_name" name="data[PickUp][contact_name]" placeholder="(opcional)" style="margin-bottom: 20px" type="text" />
+                                </tr>
+                            </table>
+                            <div style="text-align:right">
+                                <button class="btn btn-hurrier btn-blue" type="button" id="pickup_address_next_button" onclick="validate_pickup_address(true)">
+                                    Continuar &nbsp&nbsp&#12297;
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Map -->
+                    <div id="map_canvas" class="hidden-mobile" style="display:inline-block; position: absolute; width: 0px; height: 510px;"></div>
+                </div>
+                <div style="height: 20px"></div>
+            </div>
+        </div>
+
+
+
+        <!-- Dialog Log In -->
+        <form accept-charset="UTF-8" action="users/login" class="new_user"  id="log_in_user" method="post">
+            <div style="margin:0;padding:0;display:inline">
+                <input name="utf8" type="hidden" value="&#x2713;" />
+            </div>
+            <div id="log_in" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-content">
+                    <div id="login_signup" class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="vertical-align:middle; margin: 0">
+                            &times;
+                        </button>
+                        <br />
+                        <br />
+                        <p class="text-center">
+                            <button onclick="loginFB();" style="background: transparent; border: none !important;" >
+                                <img src="img/iniciaSesionFB.png" alt="Iniciar Sesión con Facebook" style="width:85%" />
+                            </button>
+                        </p>
+                        <div class="divider">
+                            <p>
+                                O ingresa tus datos
+                            </p>
+                        </div>
+                        <div id='login_fields' style="text-align:center">
+                            <div class="input-group col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                <input class="form-control" id="user_email_l" name="data[User][email]" placeholder="Email" required="required" type="email" value="" />
+                            </div>
+                            <br/>
+                            <div class="input-group col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                <input class="form-control" id="user_password_l" name="data[User][password]" placeholder="Password" required="required" type="password" />
+                            </div>
+                            <br/>
+                            <br/>
+                            <div style="text-align: center">
+                                <input class="btn btn-hurrier btn-blue" name="commit" style="margin-bottom: 0px; width: 110px" id="login_button" onclick="loginWithAjax()" value="Login" />
+                            </div>
+                        </div>
+                        <div id="log_in_error_message" STYLE="color: red"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="text-center">
+                            <p>
+                                &iquest;No est&aacute;s registrado? <a href="#" onclick="swap_log_in()">Signup</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+
+
+        <!-- Dialog Sign Up -->
+        <form accept-charset="UTF-8" action="users/add" class="new_user" data-remote="true" data-validate="true" id="sign_up_user" method="post" novalidate="novalidate">
+            <div style="margin:0;padding:0;display:inline">
+                <input name="utf8" type="hidden" value="&#x2713;" />
+            </div>
+            <div id="sign_up" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="vertical-align:middle; margin: 0">
+                                &times;
+                            </button>
+                            <p style="text-align:center; margin: 0; vertical-align:middle">
+                                Guarda tu informaci&oacute;n para no volverla a escribir en cada env&iacute;o.
+                            </p>
+                        </div>
+                        <div class="modal-body">
+                            <br/>
+                            <p class="text-center">
+                                <button onclick="loginFB();" style="background: transparent; border: none !important;" >
+                                    <img src="img/iniciaSesionFB.png" alt="Iniciar Sesión con Facebook" style="width:85%" />
+                                </button>
+
+                            </p>
+                            <!--p style="text-align:center">S&oacute;lo publicamos con tu permiso</p-->
+                            <div class="divider">
+                                <p>
+                                    O ingresa tus datos
+                                </p>
+                            </div>
+                            <p class="text-center"></p>
+                            <div id='sign_up_fields' style="text-align:center">
+
+                                <div class="input-group col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                    <input class="form-control" id="user_email_s" name="data[User][email]" placeholder="E-mail" required="requerido" type="email" />
+                                </div>
+                                <br/>
+                                <div class="input-group col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <input class="form-control" id="user_name_s" name="data[User][name]" placeholder="Nombre" required="requerido" type="text" />
+                                </div>
+                                <br/>
+                                <div class="input-group col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                    <input class="form-control" id="user_password_s" name="data[User][password]" placeholder="Contraseña" required="requerido" type="password" />
+                                </div>
+                                <br/>
+                                <div class="input-group col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                    <input class="form-control" id="user_password_confirmation_s" name="data[User][password_confirmation]" placeholder="Confirmaci&oacute;n de contraseña" required="required" style="margin-bottom: 0px" type="password" />
+                                </div>
+                                <br />
+                                <br />
+                                <div style="text-align:center">
+                                    <input class="btn btn-hurrier btn-blue" name="commit" style="width: 110px" id="signup_button" onclick="validate_signup_user(true)" value="Signup" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="text-center">
+                                <p>
+                                    &iquest;Ya estabas registrado? <a href="#" onclick="swap_sign_up()">Login</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </form>
+
+
+        <!-- Dialog Successful Sign Up -->
+        <div id="sign_up_success" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-body">
+                        <p class="text-center">
+                            <div id="sign_up_message" ></div>
+                        </p>
+                        <br/>
+                        <div style="text-align:center">
+                            <input class="btn btn-hurrier btn-blue" style="width: 110px" onclick="loginWithAjax();" id="buttonLoginFromSignup" value="Continuar" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="fb-root"></div>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2Ye3JDI4R4nFun3NHdH3I_kOGoL9qfFk&amp;libraries=places&amp;sensor=true&language=es&region=MX"></script>
+        <script src="js/form_validation.js"></script>
+        <script src="js/custom_order_application.js"></script>
+        <script src="js/pickup_validation.js"></script>
+        <script src="js/signup_login.js"></script>
+                <!-- Begin Google Analytics -->
+        <script>
+			(function(i, s, o, g, r, a, m) {
+				i['GoogleAnalyticsObject'] = r;
+				i[r] = i[r] ||
+				function() {
+					(i[r].q = i[r].q || []).push(arguments)
+				}, i[r].l = 1 * new Date();
+				a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+				a.async = 1;
+				a.src = g;
+				m.parentNode.insertBefore(a, m)
+			})(window, document, 'script', 'http://www.google-analytics.com/analytics.js', 'ga');
+
+			ga('create', 'UA-50367626-1', 'kangou.mx');
+			ga('send', 'pageview');
+
+        </script>
+    </body>
+    <!-- End Google Analytics -->
+</html>
