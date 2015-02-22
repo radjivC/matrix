@@ -1,0 +1,123 @@
+<section data-ng-controller="OrdersController">
+    <div class="page-header">
+        <h1>Pidiendo un kangou</h1>
+    </div>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="create()" novalidate>
+            <fieldset>
+                <div class="form-group">
+                    <br/><br/><br/>
+
+                    <div id="pickup">
+
+                      <div id="breadcrumb">
+                        <ul class="nav nav-pills">
+                          <li><a href="#">Paso 1: ¿Dónde recoger?</a></li>
+                          <li><a href="#">Paso 2: ¿Qué te llevo o qué te compro?</a></li>
+                          <li><a href="#">Paso 3: ¿Dónde entregar?</a></li>
+                          <li><a href="#">Paso 4: Confirmar orden</a></li>
+                        </ul>
+                      </div>
+                      <label class="control-label" for="pickup.street">Street</label>
+                      <div class="controls">
+                          <input type="text" data-ng-model="pickup.street" id="pickup.street" class="form-control" placeholder="street" required>
+                      </div>
+
+                      <label class="control-label" for="pickup.sublocality">Sublocality</label>
+                      <div class="controls">
+                          <input type="text" data-ng-model="pickup.sublocality" id="pickup.sublocality" class="form-control" placeholder="sublocality" required>
+                      </div>
+
+                      <label class="control-label" for="pickup.locality">locality</label>
+                      <div class="controls">
+                          <input type="text" data-ng-model="pickup.locality" id="pickup.locality" class="form-control" placeholder="locality" required>
+                      </div>
+                      <label class="control-label" for="pickup.administrativeArea">administrative Area</label>
+                      <div class="controls">
+                          <input type="text" data-ng-model="pickup.administrativeArea" id="name" class="form-control" placeholder="administrative Area" required>
+                      </div>
+
+                      <label class="control-label" for="pickup.postalCode"> Postal Code</label>
+                      <div class="controls">
+                          <input type="text" data-ng-model="pickup.postalCode" id="name" class="form-control" placeholder="postalCode" required>
+                      </div>
+
+                      <label class="control-label" for="pickup.references">References</label>
+                      <div class="controls">
+                          <input type="text" data-ng-model="pickup.references" id="name" class="form-control" placeholder="references " required>
+                      </div>
+
+                      <label class="control-label" for="pickup.fullname">fullname </label>
+                      <div class="controls">
+                          <input type="text" data-ng-model="pickup.fullname" id="name" class="form-control" placeholder="references" required>
+                      </div>
+                    </div>
+                    <br/><br/><br/>
+                    <div id="items">
+
+                      <label class="control-label" for="price.amount">amount</label>
+                      <div class="controls">
+                          <input type="text" data-ng-model="price.amount" id="price.amount" class="form-control" placeholder="amount" required>
+                      </div>
+                      <label class="control-label" for="price.amount">Items</label>
+                      <div class="controls">
+                          <input type="text" data-ng-model="items.type" id="items.type" class="form-control" placeholder="type" required>
+                      </div>
+                    </div>
+                    <br/><br/><br/>
+                    <div id="dropoff">
+
+                        <label class="control-label" for="dropoff.street">Street</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="dropoff.street" id="dropoff.street" class="form-control" placeholder="street" required>
+                        </div>
+
+                        <label class="control-label" for="dropoff.sublocality">Sublocality</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="dropoff.sublocality" id="dropoff.sublocality" class="form-control" placeholder="sublocality" required>
+                        </div>
+
+                        <label class="control-label" for="dropoff.locality">locality</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="dropoff.locality" id="dropoff.locality" class="form-control" placeholder="locality" required>
+                        </div>
+                        <label class="control-label" for="dropoff.administrativeArea">administrative Area</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="dropoff.administrativeArea" id="name" class="form-control" placeholder="administrative Area" required>
+                        </div>
+
+                        <label class="control-label" for="dropoff.postalCode"> Postal Code</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="dropoff.postalCode" id="name" class="form-control" placeholder="postalCode" required>
+                        </div>
+
+                        <label class="control-label" for="dropoff.references">References</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="dropoff.references" id="name" class="form-control" placeholder="references " required>
+                        </div>
+
+                        <label class="control-label" for="dropoff.fullname">fullname </label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="dropoff.fullname" id="name" class="form-control" placeholder="references" required>
+                        </div>
+                    </div>
+                    <br/><br/><br/>
+                    <div id="confirm">
+                      <label class="control-label" for="name">Name</label>
+                      <div class="controls">
+                          <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Name" required>
+                      </div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <img src="./modules/orders/img/botonPIDEUNCANGOU.png"/>
+                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+            </fieldset>
+        </form>
+
+    </div>
+</section>
